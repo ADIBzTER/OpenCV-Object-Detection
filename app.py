@@ -27,6 +27,8 @@ def gen_frames():
                 cv2.rectangle(frame, (x, y),
                               (x + height, y + width),
                               (0, 255, 0), 5)
+                frame = cv2.putText(frame, 'Monkey', (x, y), cv2.FONT_HERSHEY_SIMPLEX,
+                                    1, (255, 255, 255), 2, cv2.LINE_AA)
 
             ret, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
